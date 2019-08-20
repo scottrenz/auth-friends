@@ -6,7 +6,15 @@ import AppFriends from './components/AppFriends';
 import PrivateRoute from './components/PrivateRoute';
 
 function App() {
+const  eraseToken = () => {
+    localStorage.setItem('token', '')
+  };
+
   return (
+<div>
+      <button onClick={eraseToken}
+    >Erase Token</button>
+
     <Router>
       <div className="App">
         <ul>
@@ -22,6 +30,7 @@ function App() {
         {/* <PrivateRoute path="/anotherRoute" component={SomeOtherComponent} /> */}
       </div>
     </Router>
+    </div>
   );
 }
 
