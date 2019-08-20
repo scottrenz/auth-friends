@@ -14,23 +14,6 @@ export const SINGLE_FRIEND = 'SINGLE_FRIEND';
 export const TOGGLE_UPDATE_FRIEND = 'TOGGLE_UPDATE_FRIEND';
 
 const URL = 'http://localhost:5000/api/friends';
-// /////////////////////////
-// getData = () => {
-//   axiosWithAuth()
-//     .get('http://localhost:5000/api/data')
-//     .then(res => {
-//       this.setState({
-//         gasPrices: res.data.data.filter(
-//           price =>
-//             price.type === 'Gasoline - Regular' &&
-//             (price.location === 'US' || price.location === 'State of Hawaii')
-//         )
-//       });
-//     })
-//     .catch(err => console.log(err.response));
-// };
-
-// /////////////////////////
 export const getFriends = () => {
   const friends = axiosWithAuth().get(`${URL}`);
   return dispatch => {
@@ -47,14 +30,17 @@ console.log('getfriends',response)
 };
 
 export const createFriend = friend => {
-  const newFriend = axios.post(`${URL}/create`, friend);
+  const newFriend = axiosWithAuth().post(`${URL}`, friend);
   return dispatch => {
     dispatch({ type: CREATING_FRIEND });
     newFriend
       .then(({ data }) => {
+        console.log('post friend is',friend)
+
         dispatch({ type: CREATE_FRIEND, payload: data });
       })
       .catch(err => {
+        console.log('post friend error is',friend)
         dispatch({ type: ERROR, payload: err });
       });
   };

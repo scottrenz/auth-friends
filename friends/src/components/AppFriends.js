@@ -11,13 +11,14 @@ class AppFriends extends Component {
     this.props.getFriends();
   }
   render() {
+    console.log('appfriends error',this.props.error)
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-Title">{`My Friends`}</h1>
           <FriendForm />
         </header>
-        {this.props.error ? <h3>Error Fetching Friends</h3> : null}
+        {this.props.error ? <h3>Friends</h3> : null}
         <div className="Flex-Container">
           {this.props.gettingFriends ? (
             <img src={logo} className="App-logo" alt="logo" />
