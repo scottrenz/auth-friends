@@ -12,11 +12,11 @@ const  eraseToken = () => {
 
   return (
 <div>
-      <button onClick={eraseToken}
+    <button onClick={eraseToken}
     >Erase Token</button>
 
     <Router>
-      <div className="App">
+    <div style={{textAlign: 'left',marginLeft: '20%', border: 'medium solid black',width: '500px'}}>
         <ul>
           <li>
             <Link to="/login">Login</Link>
