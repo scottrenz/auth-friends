@@ -13,7 +13,7 @@ export const DELETING_FRIEND = 'DELETING_FRIEND';
 export const SINGLE_FRIEND = 'SINGLE_FRIEND';
 export const TOGGLE_UPDATE_FRIEND = 'TOGGLE_UPDATE_FRIEND';
 
-const URL = 'http://localhost:5000/api/friends';
+const URL = 'https://smurfs-scott.herokuapp.com/';
 export const getFriends = () => {
   const friends = axiosWithAuth().get(`${URL}`);
   return dispatch => {
