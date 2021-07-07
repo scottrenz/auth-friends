@@ -1,7 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const port = 5000;
+require('dotenv').config();
+const defaults = require('./config/defaults');
+
+
+const port = defaults.port;
 const app = express();
 const token =
   'esfeyJ1c2VySWQiOiJiMDhmODZhZi0zNWRhLTQ4ZjItOGZhYi1jZWYzOTA0NUIhkufemQifQ';
@@ -11,37 +15,37 @@ let nextId = 7;
 let friends = [
   {
     id: 1,
-    name: 'Ben',
+    name: 'Paul',
     age: 30,
     email: 'ben@lambdaschool.com'
   },
   {
     id: 2,
-    name: 'Austen',
+    name: 'Greg',
     age: 45,
     email: 'austen@lambdaschool.com'
   },
   {
     id: 3,
-    name: 'Ryan',
+    name: 'Bill',
     age: 15,
     email: 'ryan@lambdaschool.com'
   },
   {
     id: 4,
-    name: 'Dustin',
+    name: 'Brian',
     age: 25,
     email: 'D-munny@lambdaschool.com'
   },
   {
     id: 5,
-    name: 'Sean',
+    name: 'Kathy',
     age: 35,
     email: 'sean@lambdaschool.com'
   },
   {
     id: 6,
-    name: 'Michelle',
+    name: 'Katie',
     age: 67,
     email: 'michelle@gmail.com'
   }
